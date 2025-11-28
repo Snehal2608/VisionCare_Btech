@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - VisionCare</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'firstApp/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'firstApp/css/font-awesome.min.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Body & Background */
+    body {
+      font-family: 'Roboto', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      overflow-x: hidden;
+    }
+
+    /* Signup Card */
+    .signup-card {
+      background: linear-gradient(145deg, #ffffff, #f0f8ff);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 480px;
+      max-height: 90vh; /* Ensure it doesn't overflow screen */
+      overflow-y: auto; /* Scroll if too tall */
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .signup-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    }
+
+    /* Header */
+    .signup-card h3 {
+      text-align: center;
+      color: #024b30;
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    /* Form Groups */
+    .form-group {
+      margin-bottom: 18px;
+      position: relative;
+      transition: all 0.4s ease;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #024b30;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 2px solid #57c7ff;
+      background: #f0faff;
+      color: #024b30;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: #00aaff;
+      box-shadow: 0 0 12px rgba(0,170,255,0.4);
+      outline: none;
+      background: #e6f4ff;
+    }
+
+    /* Select Dropdown */
+    select.form-control {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: #f0faff url('{% static "firstApp/images/down-arrow.svg" %}') no-repeat right 15px center;
+      background-size: 16px;
+      color: #024b30;
+      font-weight: 500;
+    }
+
+    /* Buttons */
+    .btn-signup {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: #fff;
+      font-weight: 600;
+      padding: 14px;
+      border-radius: 12px;
+      width: 100%;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-signup:hover {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    }
+
+    /* Footer */
+    .form-footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #024b30;
+    }
+
+    .form-footer a {
+      color: #0072ff;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .form-footer a:hover {
+      text-decoration: underline;
+      color: #00c6ff;
+    }
+
+    /* Input Icons */
+    .input-icon {
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      transform: translateY(-50%);
+      color: #0072ff;
+      font-size: 1.2rem;
+    }
+
+    /* Smooth expand animation for patient fields */
+    #patient-fields {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    #patient-fields.show {
+      max-height: 1000px; /* enough height for all fields */
+    }
+
+    @media (max-width: 500px) {
+      .signup-card {
+        padding: 35px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-card">
+    <h3>Create Account</h3>
+    <form method="POST">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" name="username" placeholder="Enter username" required>
+        <i class="fa fa-user input-icon"></i>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+        <i class="fa fa-envelope input-icon"></i>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Enter password" required>
+        <i class="fa fa-lock input-icon"></i>
+      </div>
+
+      <div class="form-group">
+        <label>Role</label>
+        <select class="form-control" id="role-select" name="role" required>
+          <option value="">Select Role</option>
+          <option value="patient">Patient</option>
+          <option value="scanner">Scanner</option>
+        </select>
+      </div>
+
+      <div id="patient-fields">
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" class="form-control" name="age" placeholder="Age">
+        </div>
+        <div class="form-group">
+          <label>Contact Number</label>
+          <input type="text" class="form-control" name="contact_number" placeholder="Contact Number">
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" class="form-control" name="address" placeholder="Address">
+        </div>
+        <div class="form-group">
+          <label>Blood Group</label>
+          <input type="text" class="form-control" name="blood_group" placeholder="Blood Group">
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <select class="form-control" name="gender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Other Info</label>
+          <input type="text" class="form-control" name="other_info" placeholder="Other Info">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-signup">Sign Up</button>
+    </form>
+
+    <div class="form-footer">
+      <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+  </div>
+
+  <script>
+    const roleSelect = document.getElementById('role-select');
+    const patientFields = document.getElementById('patient-fields');
+    roleSelect.addEventListener('change', function() {
+      if (this.value === 'patient') {
+        patientFields.classList.add('show');
+      } else {
+        patientFields.classList.remove('show');
+      }
+    });
+  </script>
+
+  <script src="{% static 'firstApp/js/jquery.js' %}"></script>
+  <script src="{% static 'firstApp/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>VisionCare</title>
+<!--
+
+Template 2098 Health
+
+http://www.tooplate.com/view/2098-health
+
+-->
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="{% static 'firstApp/css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'firstApp/css/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'firstApp/css/animate.css' %}">
+     <link rel="stylesheet" href="{% static 'firstApp/css/owl.carousel.css' %}">
+     <link rel="stylesheet" href="{% static 'firstApp/css/owl.theme.default.min.css' %}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="{% static 'firstApp/css/tooplate-style.css' %}">
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p>Welcome to a Professional VisionCare Health Checker</p>
+                    </div>
+                         
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i>9090909090</span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">visioncare@gmail.com</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand"><i class="fa fa-h-square"></i>VisionCare</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="#top" class="smoothScroll">Home</a></li>
+                         <li><a href="#about" class="smoothScroll">About Us</a></li>
+                         <li><a href="#team" class="smoothScroll">Pathologies</a></li>
+                         <li><a href="#appointment" class="smoothScroll">Contact</a></li>
+                         <li class="appointment-btn"><a href="{% url 'login' %}">Check Vision</a></li>
+                         <li class="login-btn"><a href="{% url 'login' %}">Login</a></li>
+     
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- HOME -->
+     <section id="home" class="slider" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                         <div class="owl-carousel owl-theme">
+                              <div class="item item-first">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h3>Let's make your life happier</h3>
+                                             <h1>Healthy Living</h1>
+                                             <a href="#team" class="section-btn btn btn-default smoothScroll">Our Health Tips</a>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="item item-second">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h3>healthy vision</h3>
+                                             <h1>New Lifestyle</h1>
+                                             <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">More About Us</a>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="item item-third">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h1>Your Health Benefits</h1>
+                                             <a href="#appointment" class="section-btn btn btn-default btn-blue smoothScroll">Read more</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- ABOUT -->
+     <section id="about">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.6s">Welcome to Your <i class="fa fa-h-square"></i>Vision Saver</h2>
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <p>"Vision Matters: Your Guide to Clearer Eyes and Brighter Futures!".</p>
+                                   <p>Crystal Clear Eyes, we believe that clear vision is not just a luxury — it's a fundamental aspect of living your best life. Let us be your trusted partner in your quest for clearer eyes and brighter futures. Welcome to a world of clarity, empowerment, and endless possibilities.</p>
+                              </div>
+                              <figure class="profile wow fadeInUp" data-wow-delay="1s">
+                                   <img src="{% static 'firstApp/images/vision.jpeg' %}" class="img-responsive" alt="">
+                              </figure>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
+
+
+    
+                   <div class="container">
+     <section id="team" class="section clearfix">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                              <img src="{% static 'firstApp/images/team-image2.jpg' %}" class="img-responsive" alt="">
+                                   <div class="team-info">
+                                        <h3>Types of Pathologies</h3><br>
+                                        <p><strong>Myopia (Nearsightedness)</strong>
+ Myopia is a refractive error where distant objects appear blurry, while close objects can be seen clearly</p>
+                                        <p><strong>Cataract</strong>
+ Cataracts are cloudy areas in the eye's lens, leading to blurred or dim vision.
+</p>
+                                        <p><strong>Normal Vision</strong>
+ Normal vision refers to having clear vision at various distances without the need for corrective lenses or surgery.</p>
+                                        <p><strong>Glaucoma</strong>
+ Glaucoma is a group of eye conditions characterized by damage to the optic nerve, often due to increased pressure within the eye.</p>
+                                        <p><strong>Hypertensive Retinopathy</strong>
+ Hypertensive retinopathy is a complication of high blood pressure that affects the blood vessels in the retina.</p>
+                                        <p><strong>Age-related Macular Degeneration (AMD)</strong>
+ AMD is a progressive condition that affects the macula, the central part of the retina responsible for sharp, central vision.</p>
+                                        <p><strong>Others</strong>
+ Retinal detachment involves the retina pulling away from its normal position, causing sudden vision changes.
+</p>
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-facebook-square"></a></li>
+                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                             <li><a href="#" class="fa fa-flickr"></a></li>
+                                        </ul>
+                                   </div>
+                         </div>
+                    </div>
+ <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                              <img src="{% static 'firstApp/images/team-image1.jpg' %}" class="img-responsive" alt="">
+                                   <div class="team-info">
+                                        <h3>Eye Reading Chart Test Guidelines</h3><br>
+<p><strong>1. Use a standardized chart:</strong> Employ recognized charts like Snellen or LogMAR for consistent testing.</p>
+<p><strong>2. Ensure proper distance and lighting:</strong> Confirm correct distance and optimal lighting for accurate results.</p>
+<p><strong>3. Test one eye at a time:</strong> Cover one eye to assess each independently.</p>
+<p><strong>4. No guessing; read aloud only what's clear:</strong> Encourage reading only what's clear to avoid guessing.</p>
+<p><strong>5. Start from the top and record the smallest readable line:</strong> Begin at the top, noting the smallest visible line.</p>
+<p><strong>6. Repeat for each eye:</strong> Test both eyes separately.</p>
+<p><strong>7. Document results clearly:</strong> Maintain detailed records of test outcomes.</p>
+<p><strong>8. Interpret and refer if needed:</strong> Analyze results and refer for further evaluation if necessary.</p>
+<p><strong>9. Ensure the environment is quiet and distractions are minimized:</strong> Create a distraction-free testing environment.</p>
+
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-facebook-square"></a></li>
+                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                             <li><a href="#" class="fa fa-flickr"></a></li>
+                                        </ul>
+                                   </div>
+                         </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
+                              <img src="{% static 'firstApp/images/team-image3.jpg' %}" class="img-responsive" alt="">
+                                   <div class="team-info">
+                                        <h3>Healthy Tips for Good Vision</h3>
+
+<p>Eat a balanced diet rich in fruits and vegetables to provide essential nutrients for eye health.</p>
+
+<p>Protect your eyes from harmful UV rays by wearing sunglasses when outdoors, especially on sunny days.</p>
+
+<p>Follow the 20-20-20 rule: Every 20 minutes, take a 20-second break, and look at something 20 feet away to reduce eye strain.</p>
+
+<p>Avoid prolonged screen time and remember to blink regularly to keep your eyes moist.</p>
+
+<p>Get regular eye check-ups to detect any vision problems early and prevent potential complications.</p>
+
+<p>Avoid smoking, as it can increase the risk of developing age-related macular degeneration and other eye diseases.</p>
+
+<p>Stay hydrated by drinking plenty of water throughout the day to maintain optimal eye function.</p>
+
+<p>Practice good hygiene by washing your hands before touching your eyes to prevent infections.</p>
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-twitter"></a></li>
+                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                             <li><a href="#" class="fa fa-flickr"></a></li>
+                                        </ul>
+                                   </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+</div>
+
+
+     <!-- MAKE AN APPOINTMENT -->
+     <section id="appointment" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <img src="{% static 'firstApp/images/appointment-image.jpg' %}" class="img-responsive" alt="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                         <!-- CONTACT FORM HERE -->
+                         <form id="appointment-form" role="form" method="post" action="#">
+
+                              <!-- SECTION TITLE -->
+                              <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                   <h2>Check with our AI</h2>
+                              </div>
+
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <div class="col-md-6 col-sm-6">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
+                                   </div>
+
+                                   <div class="col-md-6 col-sm-6">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                                   </div>
+
+                                   <div class="col-md-6 col-sm-6">
+                                        <label for="date">Select Date</label>
+                                        <input type="date" name="date" value="" class="form-control">
+                                   </div>
+
+                                   <div class="col-md-6 col-sm-6">
+                                        <label for="select">Select departent</label>
+                                        <select class="form-control">
+                                             <option>General Health</option>
+                                             <option>ophthalmology</option>
+                                             <option>ENT</option>
+                                             <option>Medical Research</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-12 col-sm-12">
+                                        <label for="telephone">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
+                                        <label for="Message">Additional Message</label>
+                                        <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
+                                        <button class="appointment-btn" style="background-color: #a5c422; color: white; text-decoration: none; border: none;"><a href="{% url 'login' %}">Check Vision</a></button>
+
+                                   </div>
+                              </div>
+                        </form>
+                    </div>
+
+               </div>
+          </div>
+     </section>    
+
+     <section id="about">
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb"> 
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
+                              <p>For futher queries contact our team .</p>
+
+                              <div class="contact-info">
+                                   <p><i class="fa fa-phone"></i>9090909090</p>
+                                   <p><i class="fa fa-envelope-o"></i> <a href="#">visioncare@gmail.com</a></p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4"> 
+                         <div class="footer-thumb">
+                              <ul class="social-icon">
+                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="#" class="fa fa-twitter"></a></li>
+                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text"> 
+                                   <p>Copyright &copy; 2025 Our Company Vision Saver</p>
+                              </div>
+                         </div>
+                         <div class="col-md-6 col-sm-6">
+                              <div class="footer-link"> 
+                                   <a href="#">Departments</a>
+                                   <a href="#">Careers</a>
+                              </div>
+                         </div>
+                         <div class="col-md-2 col-sm-2 text-align-center">
+                              <div class="angle-up-btn"> 
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>   
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+</section> 
+
+     <!-- SCRIPTS -->
+     <script src="{% static 'firstApp/js/jquery.js' %}"></script>
+     <script src="{% static 'firstApp/js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'firstApp/js/jquery.sticky.js' %}"></script>
+     <script src="{% static 'firstApp/js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'firstApp/js/wow.min.js' %}"></script>
+     <script src="{% static 'firstApp/js/smoothscroll.js' %}"></script>
+     <script src="{% static 'firstApp/js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'firstApp/js/custom.js' %}"></script>
+
+</body>
+</html>
